@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Cards (
     CONSTRAINT customer_id_fkey FOREIGN KEY (Customer_ID) references Personal_Data(Customer_ID)
 );
 
-CREATE TABLE IF NOT EXISTS Transactions (
+CREATE TABLE IF NOT EXISTS Transactions ( 
     Transaction_ID SERIAL PRIMARY KEY,
     Customer_Card_ID INT NOT NULL,
     Transaction_Summ NUMERIC NOT NULL,
@@ -52,6 +52,39 @@ CREATE TABLE IF NOT EXISTS Product_Grid (
     Group_ID INT NOT NULL,
 
     CONSTRAINT produduct_grid_sku_id_pkey PRIMARY KEY (SKU_ID),
-    
+
+
+);
+
+CREATE TABLE IF NOT EXISTS Stores (
+    Transaction_Store_ID SERIAL PRIMARY KEY,
+    SKU_ID INT NOT NULL,
+    SKU_Purchase_Price INT NOT NULL,
+    SKU_Retail_Price INT NOT NULL,
+
+    -- CONSTRAINT stores_transa
+
+);
+
+CREATE TABLE IF NOT EXISTS SKU_group (
+    Group_ID SERIAL PRIMARY KEY,
+    Group_Name VARCHAR(50) NOT NULL,
+);
+
+CREATE TABLE IF NOT EXISTS Data_analysis_formation (
+    Analysis_Formation TIMESTAMP without time zone,
+);
+
+CREATE TABLE IF NOT EXISTS Customer_View (
+    Customer_ID SERIAL PRIMARY KEY,
+    Customer_Average_Check INT NOT NULL,
+    Customer_Average_Check_Segment VARCHAR(50) NOT NULL,
+    Customer_Frequency INT NOT NULL,
+    Customer_Frequency_Segment VARCHAR(50) NOT NULL,
+    Customer_Inactive_Period INT NOT NULL,
+    Customer_Churn_Rate INT NOT NULL,
+    Customer_Churn_Segment VARCHAR(50) NOT NULL,
+    Customer_SegmentINT NOT NULL,
+    Customer_Primary_Store 
 
 );
