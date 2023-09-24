@@ -75,31 +75,6 @@ CREATE TABLE IF NOT EXISTS Data_analysis_formation (
     Analysis_Formation TIMESTAMP without time zone,
 );
 
-CREATE TABLE IF NOT EXISTS Customer_View (
-    Customer_ID SERIAL PRIMARY KEY,
-    Customer_Average_Check INT NOT NULL,
-    Customer_Average_Check_Segment VARCHAR(50) NOT NULL,
-    Customer_Frequency INT NOT NULL,
-    Customer_Frequency_Segment VARCHAR(50) NOT NULL,
-    Customer_Inactive_Period INT NOT NULL,
-    Customer_Churn_Rate INT NOT NULL,
-    Customer_Churn_Segment VARCHAR(50) NOT NULL,
-    Customer_SegmentINT NOT NULL,
-    Customer_Primary_Store 
-
-);
-
-CREATE TABLE IF NOT EXISTS Purchase_history_View (
-    Customer_ID
-    Transaction_ID
-    Transaction_DateTime TIMESTAMP without time zone,
-    Group_ID 
-    Group_Cost INT NOT NULL,
-    Group_Summ INT NOT NULL,
-    Group_Summ_Paid INT NOT NULL,
-
-
-);
 
 CREATE TABLE IF NOT EXISTS Peroids_View (
     Customer_ID
