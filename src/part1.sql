@@ -88,3 +88,41 @@ CREATE TABLE IF NOT EXISTS Customer_View (
     Customer_Primary_Store 
 
 );
+
+CREATE TABLE IF NOT EXISTS Purchase_history_View (
+    Customer_ID
+    Transaction_ID
+    Transaction_DateTime TIMESTAMP without time zone,
+    Group_ID 
+    Group_Cost INT NOT NULL,
+    Group_Summ INT NOT NULL,
+    Group_Summ_Paid INT NOT NULL,
+
+
+);
+
+CREATE TABLE IF NOT EXISTS Peroids_View (
+    Customer_ID
+    Group_ID
+    First_Group_Purchase_Date TIMESTAMP with time zone,
+    Last_Group_Purchase_Date TIMESTAMP with time zone,
+    Group_Purchase INT NOT NULL,
+    Group_Frequency INT NOT NULL,
+    Group_Min_Discount INT NOT NULL,
+
+
+);
+
+CREATE TABLE IF NOT EXISTS Groups_View (
+    Customer_ID
+    Group_ID
+    Group_Affinity_Index INT NOT NULL,
+    Group_Churn_Rate INT NOT NULL,
+    Group_Stability_Index INT NOT NULL,
+    Group_Margin INT NOT NULL,
+    Group_Discount_Share INT NOT NULL,
+    Group_Minimum_Discount INT NOT NULL,
+    Group_Average_Discount INT NOT NULL
+
+
+);
