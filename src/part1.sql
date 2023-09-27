@@ -101,3 +101,14 @@ CREATE TABLE IF NOT EXISTS Groups_View (
 
 
 );
+
+CREATE OR REPLACE PROCEDURE prc_import_csv
+(
+	IN tablename TEXT,
+	IN path TEXT,
+	IN delimeter TEXT
+) AS $$
+	BEGIN
+		EXECUTE format('COPY %s FROM %L WITH DELIMITER %L CSV;', tablename, path, delimeter);
+	END;
+$$ LANGUAGE plpgsql;
